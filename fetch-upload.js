@@ -24,6 +24,7 @@ async function upload(ev) {
             body: reader.result,
         };
         let response = await fetch("https://api.accusoft.com/bx/api/v1/barcodeReader", requestOptions)
+        document.getElementById('output').textContent = await response.text();
         console.log(await response.text());
     };
 }
